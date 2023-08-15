@@ -31,7 +31,7 @@ def Update(request, itemid):
         menu.available = "yes"
         menu.save()
     else:
-        return JsonResponse({"msg": "eror"})
+        return JsonResponse({"msg": "Error in updating"})
     return JsonResponse({"msg": "Update"})
 
 
@@ -40,5 +40,5 @@ def Delete(request, itemid):
         menu = FoodMenu.objects.get(id=itemid)
         menu.delete()
     else:
-        return JsonResponse({"msg": "eror"})
+        return JsonResponse({"msg": "Error in deleting"})
     return HttpResponse(json.dumps({"msg": "Deleted"}))

@@ -33,7 +33,7 @@ def Update(req, itemid):
         order.status = status
         order.save()
     else:
-        return HttpResponse(json.dumps({"msg": "Wrong route"}))
+        return HttpResponse(json.dumps({"msg": "Error in updating"}))
     return HttpResponse(json.dumps({"msg": "Upated Successfully"}))
 
 
@@ -42,5 +42,5 @@ def Delete(req, itemid):
     if req.method == "DELETE":
         order.delete()
     else:
-        return HttpResponse(json.dumps({"msg": "Wrong route"}))
+        return HttpResponse(json.dumps({"msg": "Error in deleting"}))
     return HttpResponse(json.dumps({"msg": "Deleted Successfully"}))
